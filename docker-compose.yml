@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+  mysql:
+    image: mysql
+    container_name: mysql
+    command: mysqld --user=root --verbose
+    volumes:
+      - ./init.sql:/init.sql
+      - ./import.sh:/import.sh
+    network_mode: bridge
+    environment:
+      MYSQL_DATABASE: "development"
+      MYSQL_USER: "mike"
+      MYSQL_PASSWORD: "password"
+      MYSQL_ROOT_PASSWORD: "password"
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
