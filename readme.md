@@ -6,5 +6,5 @@
     
     docker-compose up -d
     
-    docker-compose exec mysql bash import.sh
+    ./create_db.sh
   
